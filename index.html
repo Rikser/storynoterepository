@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+<style>
+body {
+	background-image: url("img/bgr.jpg");
+}	
+p {
+	color: white;
+	font-size: 20px;
+}
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 3px solid white;
+  position: absolute;
+  bottom: -1px;
+}
+</style>
+		<!-- <script type="text/javascript" href="drag.js"></script> -->
+		<script type="text/javascript">
+			function allowDrop(ev) {
+				    ev.preventDefault();
+				}
+
+				function drag(ev) {
+				    ev.dataTransfer.setData("text", ev.target.id);
+				}
+
+				function drop(ev) {
+				    ev.preventDefault();
+				    var data = ev.dataTransfer.getData("text");
+				    ev.target.appendChild(document.getElementById(data));
+				    //alert("Dropped");
+				    var sound = document.body.getElementsByTagName("audio")[0];
+				    sound.play();
+				}
+		</script>
+	</head>
+	<body>
+		<audio controls style="display:none;">
+		  <source src="sound/cat.wav" type="audio/wav">
+				Your browser does not support the audio element.
+		</audio>
+
+		<p>Drag the cat to the basket:</p>
+
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br>
+		<img id="drag1" src="img/cat.jpg" draggable="true" ondragstart="drag(event)" width="70" height="80">
+	</body>
+</html>
+
