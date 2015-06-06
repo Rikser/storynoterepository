@@ -1,0 +1,21 @@
+.game-body {
+	margin-top: 50px;
+}
+.game-body-header {
+ 	margin: 20% 0;
+	background-color: rgba(0, 0, 0, 0.57);
+	position: relative;
+	text-align: center;
+	opacity: 3.2;
+	padding: 5% 0;
+}
+.game-body img{
+	top: 50px;
+	position: absolute;	
+}
+.game-body h1 {
+	color: white;
+}
+.game-body h5 {
+	color: white;
+}
