@@ -1,5 +1,6 @@
 var app = angular.module('storyNoteApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngDragDrop'
 ]).
 config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
